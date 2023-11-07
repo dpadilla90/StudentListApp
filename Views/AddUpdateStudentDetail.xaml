@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteDemoApp.Views.AddUpdateStudentDetail"
+             xmlns:viewModels="clr-namespace:SQLiteDemoApp.ViewModels"
+             x:DataType="viewModels:AddUpdateStudentDetailViewModel"
+             Title="Student List Page">
+
+
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="30">
+            <Entry Text="{Binding Firstname}" Placeholder="First name" FontSize="16"/>
+            <Entry Text="{Binding Lastname}" Placeholder="Last name" FontSize="16"/>
+            <Entry Text="{Binding Email}" Placeholder="Email" Keyboard="Email" FontSize="16"/>
+
+            <!-- Include a Save Button -->
+            <Button Text="Save" Command="{Binding SaveStudentCommand}" />
+
+            <!-- Include a Delete Button -->
+            <Button Text="Delete" Command="{Binding DeleteStudentCommand}" IsVisible="{Binding IsExistingStudent}" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
